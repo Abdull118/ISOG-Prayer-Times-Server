@@ -13,9 +13,6 @@ dotenv.config({ path: './config/.env' });
 // Environment Varibles
 const PORT = process.env.PORT || 4000;
 
-// Connect to DB
-connectDB();
-
 // Start Server
 const app = express();
 
@@ -40,6 +37,8 @@ app.use(
 app.use('/', require('./routes/index'));
 
 // Server
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-  });
+connectDB().then(() => {
+  app.listen(PORT, () => {
+      console.log("listening for requests");
+  })
+})
