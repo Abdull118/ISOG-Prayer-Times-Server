@@ -1,4 +1,4 @@
-let Hadith = require('../models/announcementsModel')
+let Hadith = require('../models/hadithModel')
 
 module.exports ={
     getHadith: async (req, res) =>{
