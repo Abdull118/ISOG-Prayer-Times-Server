@@ -42,7 +42,7 @@ module.exports ={
             if (!hadithDocument) {
                 return res.status(404).send('Announcement not found');
             }
-            hadithDocument.hadiths.splice(index, 1);
+            hadithDocument.hadith.splice(index, 1);
             await hadithDocument.save();
     
             res.status(200).send('Announcement deleted successfully');

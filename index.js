@@ -40,6 +40,6 @@ app.use('/', require('./routes/index'));
 // Server
 connectDB().then(() => {
   app.listen(PORT, () => {
-      console.log("listening for requests");
+      console.log("listening for requests on PORT", PORT);
   })
 })
