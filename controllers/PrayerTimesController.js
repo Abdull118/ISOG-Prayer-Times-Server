@@ -1,6 +1,7 @@
 // PrayerTimesController.js
 const PrayerTimesModel = require('../models/PrayerTimesModel');
 const PrayerModel = require('../models/prayerModel'); // Update with correct path
+const moment = require('moment-timezone');
 
 // Helper function: Convert 12-hour time to minutes
 const timeToMinutes = (time12h) => {
@@ -22,10 +23,10 @@ const timeToMinutes = (time12h) => {
 
 // Helper function: Get the current time in minutes
 const currentTimeInMinutes = () => {
-    const now = new Date();
-    return now.getHours() * 60 + now.getMinutes();
+    // Specify the desired time zone, e.g., 'America/Toronto' for Guelph, Canada
+    const now = moment().tz('America/Toronto');
+    return now.hours() * 60 + now.minutes();
 };
-
 // Function to determine the next prayer
 const determineNextPrayer = (prayerTimes) => {
     const currentTime = currentTimeInMinutes();
