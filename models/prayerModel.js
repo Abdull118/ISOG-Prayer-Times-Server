@@ -15,6 +15,9 @@ const PrayerSchema = new mongoose.Schema({
     },
     isha: {
         type: String,
+    },
+    nextPrayer: {
+        type: String
     }
 });
 
