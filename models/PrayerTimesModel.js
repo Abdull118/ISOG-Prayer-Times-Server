@@ -16,7 +16,6 @@ const getPrayerTimes = async (city, country, method) => {
 const convertPrayerTimes = (times) => {
     return {
         fajr: convertTo12Hour(times.Fajr),
-        sunrise: convertTo12Hour(times.Sunrise),
         dhuhr: convertTo12Hour(times.Dhuhr),
         asr: convertTo12Hour(times.Asr),
         maghrib: convertTo12Hour(times.Maghrib),
