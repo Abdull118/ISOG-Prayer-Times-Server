@@ -32,7 +32,7 @@ const MongoStore = connectMongo(session);
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'keyboard cat',
+    secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
