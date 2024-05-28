@@ -6,14 +6,20 @@
         "use": "@vercel/node"
       },
       {
-        "src": "routes/*.js",
+        "src": "routes/**/*.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "/routes/$1.js" },
-      { "src": "/(.*)", "dest": "/index.js" }
-    ],
+      {
+        "src": "/api/(.*)",
+        "dest": "/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
+    ],  
     "env": {
         "DB_URI": "mongodb+srv://ahmadevelops:Abdull118@cluster0.rufna06.mongodb.net/"
     }
