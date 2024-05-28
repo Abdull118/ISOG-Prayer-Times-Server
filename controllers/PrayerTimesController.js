@@ -55,7 +55,7 @@ const getNextPrayerAndUpdate = async (req, res) => {
         let existingPrayer = await PrayerModel.findOne();
         if (existingPrayer) {
             await PrayerModel.updateOne({ _id: existingPrayer._id }, { nextPrayer: nextPrayer });
-            res.json({ nextPrayer , currentTimeInMinutes});
+            res.json({ nextPrayer });
         } else {
             res.status(404).send("No existing prayer document found");
         }
